@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "70kiweBGzdhIcioQ+A+4hgvVhzbYJVfZqaD9bKr7hjUAzFxhj1Xq+iQQLShCyx0YMbI3JH1SK0xUcOZPmDtvyw==",
+  "success": true,
+  "projectFilePath": "D:\\desktop\\siemens-plcdemo\\SiemensPLCDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shenziwei\\.nuget\\packages\\s7netplus\\0.20.0\\s7netplus.0.20.0.nupkg.sha512"
+  ],
+  "logs": []
+}
