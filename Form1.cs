@@ -44,7 +44,6 @@ namespace SiemensPLCDemo
             try
             {
                 plc.Write(WriteDBNoTxt.Text, dbValue);
-
                 MessageBox.Show("–¥»Î≥…π¶");
             }
             catch (Exception ex)
