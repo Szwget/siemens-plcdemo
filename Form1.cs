@@ -93,7 +93,8 @@ namespace SiemensPLCDemo
                 MessageBox.Show("PLC已经断开连接");
                 return;
             }
-            MessageBox.Show("读取成功");
+            plc.Close();
+            MessageBox.Show("操作成功!");
         }
     }
 }

@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="S7netplus" Version="0.20.0" />
+    <ProjectReference Include="..\s7netplus\S7.Net\S7.Net.csproj" />
   </ItemGroup>
 
 </Project>
