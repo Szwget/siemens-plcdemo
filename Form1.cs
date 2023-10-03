@@ -12,7 +12,6 @@ namespace SiemensPLCDemo
             InitializeComponent();
         }
 
-
         private void Form1_Shown(object sender, EventArgs e)
         {
             Thread tr = new Thread(ConnectPlc);
@@ -129,23 +128,6 @@ namespace SiemensPLCDemo
             ReadDBValue.Text = val;
             MessageBox.Show("读取成功");
         }
-
-        /// <summary>
-        /// 断开PLC连接
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (plc == null || plc.IsConnected == false)
-            {
-                MessageBox.Show("PLC已经断开连接");
-                return;
-            }
-            plc.Close();
-            MessageBox.Show("操作成功!");
-        }
-
 
     }
 }
