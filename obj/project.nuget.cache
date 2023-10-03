@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XpbxYqw0DGIzF+3an3FZZGGGdUlrq/aJE3LYPcB5wDAgO9WdSomvdJgOUUjSi5C1UJRUxmHqocOvGVTrvxVPDA==",
+  "dgSpecHash": "0chh6lRkMeko1Ky19SP3WohK8JqugaA3ap5bTNME9FU4qnETNqVwOQ0IEPvmcacSEx7VcPILah/yQCI4F6yO1w==",
   "success": true,
   "projectFilePath": "D:\\desktop\\LearnCode\\C#\\siemens-plcdemo\\SiemensPLCDemo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\shenziwei\\.nuget\\packages\\s7netplus\\0.20.0\\s7netplus.0.20.0.nupkg.sha512"
+  ],
   "logs": []
 }

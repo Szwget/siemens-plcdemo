@@ -42,8 +42,6 @@ D:\desktop\LearnCode\C#\siemens-plcdemo\bin\Debug\net6.0-windows\SiemensPLCDemo.
 D:\desktop\LearnCode\C#\siemens-plcdemo\bin\Debug\net6.0-windows\SiemensPLCDemo.dll
 D:\desktop\LearnCode\C#\siemens-plcdemo\bin\Debug\net6.0-windows\SiemensPLCDemo.pdb
 D:\desktop\LearnCode\C#\siemens-plcdemo\bin\Debug\net6.0-windows\S7.Net.dll
-D:\desktop\LearnCode\C#\siemens-plcdemo\bin\Debug\net6.0-windows\S7.Net.pdb
-D:\desktop\LearnCode\C#\siemens-plcdemo\bin\Debug\net6.0-windows\S7.Net.xml
 D:\desktop\LearnCode\C#\siemens-plcdemo\obj\Debug\net6.0-windows\SiemensPLCDemo.csproj.AssemblyReference.cache
 D:\desktop\LearnCode\C#\siemens-plcdemo\obj\Debug\net6.0-windows\SiemensPLCDemo.Form1.resources
 D:\desktop\LearnCode\C#\siemens-plcdemo\obj\Debug\net6.0-windows\SiemensPLCDemo.csproj.GenerateResource.cache

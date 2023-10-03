@@ -12,15 +12,64 @@ namespace SiemensPLCDemo
             InitializeComponent();
         }
 
-        /// <summary>
-        /// 连接PLC
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            Thread tr = new Thread(ConnectPlc);
+            tr.Start();
+            SendHeartBeat();
+            if (plc != null && plc.IsConnected)
+            {
+                ConnectState.Text = "已连接";
+                ConnectState.BackColor = Color.Green;
+            }
+            else
+            {
+                ConnectState.BackColor = Color.Red;
+            }
+        }
+
+        private void SendHeartBeat()
+        {
+            Thread heartBeat = new Thread(SendHeartBeat);
+            heartBeat.Start();
+            if (plc != null && plc.IsConnected)
+            {
+                try
+                {
+                    plc.WriteAsync("DB5.DBX0.0", 1);
+                    ConnectState.BackColor = Color.Green;
+                }
+                catch (Exception ex)
+                {
+                    ConnectState.BackColor = Color.Red;
+                    Console.WriteLine("重新连接PLC" + ex.Message);
+                    ConnectPlc();
+                }
+            }
+            else if (plc != null && !plc.IsConnected)
+            {
+                ConnectState.BackColor = Color.Red;
+                Console.WriteLine("重新连接PLC");
+                ConnectPlc();
+            }
+        }
+
+
+        public void ConnectPlc()
         {
             plc = new Plc(CpuType.S71200, IPTxt.Text, 0, 0);
-            plc.Open();
+            try
+            {
+                plc.Open();
+                ConnectState.Text = "已连接";
+                ConnectState.BackColor = Color.Green;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("PLC连接失败");
+            }
+
         }
 
         /// <summary>
@@ -96,5 +145,7 @@ namespace SiemensPLCDemo
             plc.Close();
             MessageBox.Show("操作成功!");
         }
+
+
     }
 }

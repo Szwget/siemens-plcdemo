@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiemensPLCDemo", "SiemensPLCDemo.csproj", "{D456B013-8796-4651-B37F-D0BA8B9BCD56}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "S7.Net", "..\s7netplus\S7.Net\S7.Net.csproj", "{0E764DC1-D969-4EB7-8197-E18CECBF5843}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{D456B013-8796-4651-B37F-D0BA8B9BCD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D456B013-8796-4651-B37F-D0BA8B9BCD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D456B013-8796-4651-B37F-D0BA8B9BCD56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E764DC1-D969-4EB7-8197-E18CECBF5843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E764DC1-D969-4EB7-8197-E18CECBF5843}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E764DC1-D969-4EB7-8197-E18CECBF5843}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E764DC1-D969-4EB7-8197-E18CECBF5843}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

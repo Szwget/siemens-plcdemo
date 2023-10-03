@@ -4,230 +4,6 @@
     "D:\\desktop\\LearnCode\\C#\\siemens-plcdemo\\SiemensPLCDemo.csproj": {}
   },
   "projects": {
-    "D:\\desktop\\LearnCode\\C#\\s7netplus\\S7.Net\\S7.Net.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\desktop\\LearnCode\\C#\\s7netplus\\S7.Net\\S7.Net.csproj",
-        "projectName": "S7netplus",
-        "projectPath": "D:\\desktop\\LearnCode\\C#\\s7netplus\\S7.Net\\S7.Net.csproj",
-        "packagesPath": "C:\\Users\\shenziwei\\.nuget\\packages\\",
-        "outputPath": "D:\\desktop\\LearnCode\\C#\\s7netplus\\S7.Net\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "configFilePaths": [
-          "C:\\Users\\shenziwei\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net452",
-          "net462",
-          "net5.0",
-          "net6.0",
-          "net7.0",
-          "netstandard1.3",
-          "netstandard2.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.myget.org/F/jint/api/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          },
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          },
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {}
-          },
-          "net452": {
-            "targetAlias": "net452",
-            "projectReferences": {}
-          },
-          "net462": {
-            "targetAlias": "net462",
-            "projectReferences": {}
-          },
-          "netstandard1.3": {
-            "targetAlias": "netstandard1.3",
-            "projectReferences": {}
-          },
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        },
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.SourceLink.GitHub": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        },
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.SourceLink.GitHub": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        },
-        "net452": {
-          "targetAlias": "net452",
-          "dependencies": {
-            "Microsoft.SourceLink.GitHub": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "System.Memory": {
-              "target": "Package",
-              "version": "[4.5.5, )"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        },
-        "net462": {
-          "targetAlias": "net462",
-          "dependencies": {
-            "Microsoft.NETFramework.ReferenceAssemblies": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.3, )",
-              "autoReferenced": true
-            },
-            "Microsoft.SourceLink.GitHub": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "System.Memory": {
-              "target": "Package",
-              "version": "[4.5.5, )"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        },
-        "netstandard1.3": {
-          "targetAlias": "netstandard1.3",
-          "dependencies": {
-            "Microsoft.SourceLink.GitHub": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "NETStandard.Library": {
-              "target": "Package",
-              "version": "[1.6.1, )",
-              "autoReferenced": true
-            },
-            "System.Memory": {
-              "target": "Package",
-              "version": "[4.5.5, )"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        },
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "Microsoft.SourceLink.GitHub": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
-            "System.Memory": {
-              "target": "Package",
-              "version": "[4.5.5, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "D:\\desktop\\LearnCode\\C#\\siemens-plcdemo\\SiemensPLCDemo.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -252,11 +28,7 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {
-              "D:\\desktop\\LearnCode\\C#\\s7netplus\\S7.Net\\S7.Net.csproj": {
-                "projectPath": "D:\\desktop\\LearnCode\\C#\\s7netplus\\S7.Net\\S7.Net.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -268,6 +40,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "S7netplus": {
+              "target": "Package",
+              "version": "[0.20.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

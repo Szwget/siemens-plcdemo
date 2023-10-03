@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ConnectPLCButton = new Button();
             label1 = new Label();
             IPTxt = new TextBox();
             WriteDBNoTxt = new TextBox();
@@ -45,18 +44,8 @@
             textBox2 = new TextBox();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
+            ConnectState = new Label();
             SuspendLayout();
-            // 
-            // ConnectPLCButton
-            // 
-            ConnectPLCButton.Location = new Point(204, 26);
-            ConnectPLCButton.Name = "ConnectPLCButton";
-            ConnectPLCButton.Size = new Size(111, 29);
-            ConnectPLCButton.TabIndex = 0;
-            ConnectPLCButton.Text = "连接PLC";
-            ConnectPLCButton.UseVisualStyleBackColor = true;
-            ConnectPLCButton.Click += button1_Click;
             // 
             // label1
             // 
@@ -191,22 +180,21 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // button3
+            // ConnectState
             // 
-            button3.Location = new Point(321, 26);
-            button3.Name = "button3";
-            button3.Size = new Size(91, 28);
-            button3.TabIndex = 19;
-            button3.Text = "断开连接";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            ConnectState.AutoSize = true;
+            ConnectState.Location = new Point(204, 32);
+            ConnectState.Name = "ConnectState";
+            ConnectState.Size = new Size(56, 17);
+            ConnectState.TabIndex = 19;
+            ConnectState.Text = "连接状态";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(431, 193);
-            Controls.Add(button3);
+            ClientSize = new Size(431, 352);
+            Controls.Add(ConnectState);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox2);
@@ -223,9 +211,9 @@
             Controls.Add(WriteDBNoTxt);
             Controls.Add(IPTxt);
             Controls.Add(label1);
-            Controls.Add(ConnectPLCButton);
             Name = "Form1";
             Text = "Form1";
+            Shown += Form1_Shown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,6 +237,6 @@
         private TextBox textBox2;
         private Button button1;
         private Button button2;
-        private Button button3;
+        private Label ConnectState;
     }
 }
