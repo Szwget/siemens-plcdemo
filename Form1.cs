@@ -16,7 +16,6 @@ namespace SiemensPLCDemo
         {
             Thread tr = new Thread(ConnectPlc);
             tr.Start();
-            SendHeartBeat();
             if (plc != null && plc.IsConnected)
             {
                 ConnectState.Text = "ÒÑÁ¬½Ó";
@@ -26,11 +25,12 @@ namespace SiemensPLCDemo
             {
                 ConnectState.BackColor = Color.Red;
             }
+            SendHeartBeatThread();
         }
 
-        private void SendHeartBeat()
+        private void SendHeartBeatThread()
         {
-            Thread heartBeat = new Thread(SendHeartBeat);
+            Thread heartBeat = new Thread(SendHeartBeatThread);
             heartBeat.Start();
             if (plc != null && plc.IsConnected)
             {
@@ -53,7 +53,6 @@ namespace SiemensPLCDemo
                 ConnectPlc();
             }
         }
-
 
         public void ConnectPlc()
         {
