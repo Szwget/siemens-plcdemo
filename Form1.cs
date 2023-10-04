@@ -59,13 +59,18 @@ namespace SiemensPLCDemo
                     {
                         // 下发心跳
                         plc.WriteAsync("DB5.DBX0.0", 1);
-                        ConnectState.BackColor = Color.Green;
+                        this.Invoke(() => {
+                            ConnectState.BackColor = Color.Green;
+                            ConnectState.Text = "已连接";
+                        });
                     }
                     catch (Exception ex)
                     {
                         // 下发心跳抛出异常，说明连接已经断开
-                        ConnectState.Text = "连接断开";
-                        ConnectState.BackColor = Color.Red;
+                        this.Invoke(() => {
+                            ConnectState.Text = "连接断开";
+                            ConnectState.BackColor = Color.Red;
+                        });
                         Console.WriteLine("重新连接PLC" + ex.Message);
                         // 再次连接PLC
                         ConnectPlc();
@@ -74,8 +79,10 @@ namespace SiemensPLCDemo
                 // PLC连接状态为未连接时进入
                 else if (plc != null && !plc.IsConnected)
                 {
-                    ConnectState.Text = "连接断开";
-                    ConnectState.BackColor = Color.Red;
+                    this.Invoke(() => {
+                        ConnectState.Text = "连接断开";
+                        ConnectState.BackColor = Color.Red;
+                    });
                     Console.WriteLine("重新连接PLC");
                     // 再次连接PLC
                     ConnectPlc();
