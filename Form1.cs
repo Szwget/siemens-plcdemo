@@ -12,6 +12,11 @@ namespace SiemensPLCDemo
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 当窗体第一次加载时连接PLC
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Shown(object sender, EventArgs e)
         {
             Thread tr = new Thread(ConnectPlc);
@@ -28,6 +33,9 @@ namespace SiemensPLCDemo
             SendHeartBeatThread();
         }
 
+        /// <summary>
+        /// 向PLC发送心跳,检测是否断开与PLC的连接
+        /// </summary>
         private void SendHeartBeatThread()
         {
             Thread heartBeat = new Thread(SendHeartBeatThread);
@@ -53,7 +61,9 @@ namespace SiemensPLCDemo
                 ConnectPlc();
             }
         }
-
+        /// <summary>
+        /// 连接PLC
+        /// </summary>
         public void ConnectPlc()
         {
             plc = new Plc(CpuType.S71200, IPTxt.Text, 0, 0);
