@@ -5,7 +5,7 @@ namespace SiemensPLCDemo
     public partial class Form1 : Form
     {
 
-        Plc plc;
+        Plc? plc;
 
         public Form1()
         {
@@ -19,56 +19,82 @@ namespace SiemensPLCDemo
         /// <param name="e"></param>
         private void Form1_Shown(object sender, EventArgs e)
         {
-            Thread tr = new Thread(ConnectPlc);
-            tr.Start();
+            // 连接PLC
+            ConnectPlc(); 
             if (plc != null && plc.IsConnected)
             {
+                // 修改PLC连接状态显示
                 ConnectState.Text = "已连接";
                 ConnectState.BackColor = Color.Green;
             }
             else
             {
+                ConnectState.Text = "连接断开";
                 ConnectState.BackColor = Color.Red;
             }
+            // 开启下发心跳线程
             SendHeartBeatThread();
         }
 
         /// <summary>
-        /// 向PLC发送心跳,检测是否断开与PLC的连接
+        /// 开启线程,发送心跳,检测是否断开与PLC的连接
         /// </summary>
         private void SendHeartBeatThread()
         {
-            Thread heartBeat = new Thread(SendHeartBeatThread);
-            heartBeat.Start();
-            if (plc != null && plc.IsConnected)
+            Thread th = new Thread(SendHeartBeat);
+            th.Start();
+        }
+
+        /// <summary>
+        /// 发送心跳数据
+        /// </summary>
+        private void SendHeartBeat()
+        {
+            while (true)
             {
-                try
+                // PLC连接状态为已连接时进入
+                if (plc != null && plc.IsConnected)
                 {
-                    plc.WriteAsync("DB5.DBX0.0", 1);
-                    ConnectState.BackColor = Color.Green;
+                    try
+                    {
+                        // 下发心跳
+                        plc.WriteAsync("DB5.DBX0.0", 1);
+                        ConnectState.BackColor = Color.Green;
+                    }
+                    catch (Exception ex)
+                    {
+                        // 下发心跳抛出异常，说明连接已经断开
+                        ConnectState.Text = "连接断开";
+                        ConnectState.BackColor = Color.Red;
+                        Console.WriteLine("重新连接PLC" + ex.Message);
+                        // 再次连接PLC
+                        ConnectPlc();
+                    }
                 }
-                catch (Exception ex)
+                // PLC连接状态为未连接时进入
+                else if (plc != null && !plc.IsConnected)
                 {
+                    ConnectState.Text = "连接断开";
                     ConnectState.BackColor = Color.Red;
-                    Console.WriteLine("重新连接PLC" + ex.Message);
+                    Console.WriteLine("重新连接PLC");
+                    // 再次连接PLC
                     ConnectPlc();
                 }
-            }
-            else if (plc != null && !plc.IsConnected)
-            {
-                ConnectState.BackColor = Color.Red;
-                Console.WriteLine("重新连接PLC");
-                ConnectPlc();
+                // 加延时,具体延时多长时间,根据下位机要求来做
+                Thread.Sleep(300);
             }
         }
+
         /// <summary>
         /// 连接PLC
         /// </summary>
         public void ConnectPlc()
         {
+            // 创建PLC连接对象, ip为界面IP输入框的内容, rack和slot采用默认值0(具体值可以参考西门子PLC相关文档)
             plc = new Plc(CpuType.S71200, IPTxt.Text, 0, 0);
             try
             {
+                // 打开与PLC的连接
                 plc.Open();
                 ConnectState.Text = "已连接";
                 ConnectState.BackColor = Color.Green;
@@ -76,6 +102,8 @@ namespace SiemensPLCDemo
             catch (Exception)
             {
                 Console.WriteLine("PLC连接失败");
+                ConnectState.Text = "连接断开";
+                ConnectState.BackColor = Color.Red;
             }
 
         }
